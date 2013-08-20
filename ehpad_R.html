@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>EHPAD</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>EHPAD</h1>
+
+<ul>
+<li>Echec ouverture fichier XML de open data des établissement médico-sociaux: fichier trop volumineux</li>
+<li>extraction des données à partir de la BD Finess <em>finess.sante.gouv.fr/finess/jsp/actionRechercheSimple.do</em></li>
+<li>critères de recherche: 
+
+<ul>
+<li>Localisation = ALSACE</li>
+<li>Domaine: Hébergement personnes âgées [4420]</li>
+<li>Statut Juridique: Tous</li>
+<li>Type: Etablissement</li>
+<li>Etat: Ouvert</li>
+<li>Catégorie: Toutes
+Le fichier est renommé en <em>ehpad_alsace.csv</em> et sauvegardé dans <em>f&lt;-&ldquo;~/Documents/NRBCE/PBE Alsace/Evac_EHPAD/ehpad_alsace.csv&rdquo;</em></li>
+</ul></li>
+<li>La terntative de lecture échoue à cause des caractères accentuées des nom de colonnes: <em>erreur dans make.names(col.names, unique = TRUE) :  chaîne de charactères multioctets incorrecte 5</em> =&gt; suppression via gedit de tous les caractères accentués (é, è, â).</li>
+<li>après correction la lecture fonctionne:</li>
+</ul>
+
+<p>f&lt;-&ldquo;~/Documents/NRBCE/PBE Alsace/Evac_EHPAD/ehpad_alsace.csv&rdquo;
+d&lt;-read.table(f,header=TRUE,sep=&ldquo;;&rdquo;,as.is=TRUE)</p>
+
+<p>save(d,file=&ldquo;ehpad_alsace.rda&rdquo;)</p>
+
+<pre><code class="r">f &lt;- &quot;~/Documents/NRBCE/PBE Alsace/Evac_EHPAD&quot;
+setwd(f)
+load(&quot;ehpad_alsace.Rda&quot;)
+names(d)
+</code></pre>
+
+<pre><code>##  [1] &quot;Numero.FINESS&quot;           &quot;SIRET&quot;                  
+##  [3] &quot;APE&quot;                     &quot;Raison.sociale&quot;         
+##  [5] &quot;Complement.distribution&quot; &quot;Adresse&quot;                
+##  [7] &quot;Lieudit_BP&quot;              &quot;Code.postal&quot;            
+##  [9] &quot;Libelle.routage&quot;         &quot;Tel&quot;                    
+## [11] &quot;Fax&quot;                     &quot;Date.ouvert&quot;            
+## [13] &quot;Code.categorie&quot;          &quot;Lib.categorie&quot;          
+## [15] &quot;Code.statut&quot;             &quot;Lib.statut&quot;             
+## [17] &quot;Code.tarif&quot;              &quot;Lib.tarif&quot;              
+## [19] &quot;Code.PSPH&quot;               &quot;Lib.PSPH&quot;               
+## [21] &quot;FINESS.juridique&quot;        &quot;SOC.&quot;                   
+## [23] &quot;Discipline1&quot;             &quot;Mode.de.fonctionnement1&quot;
+## [25] &quot;Clientele1&quot;              &quot;Capacite.hommes1&quot;       
+## [27] &quot;Capacite.femmes1&quot;        &quot;Capacite.totale1&quot;       
+## [29] &quot;Discipline2&quot;             &quot;Mode.de.fonctionnement2&quot;
+## [31] &quot;Clientele2&quot;              &quot;Capacite.hommes2&quot;       
+## [33] &quot;Capacite.femmes2&quot;        &quot;Capacite.totale2&quot;       
+## [35] &quot;Discipline3&quot;             &quot;Mode.de.fonctionnement3&quot;
+## [37] &quot;Clientele3&quot;              &quot;Capacite.hommes3&quot;       
+## [39] &quot;Capacite.femmes3&quot;        &quot;Capacite.totale3&quot;       
+## [41] &quot;Discipline4&quot;             &quot;Mode.de.fonctionnement4&quot;
+## [43] &quot;Clientele4&quot;              &quot;Capacite.hommes4&quot;       
+## [45] &quot;Capacite.femmes4&quot;        &quot;Capacite.totale4&quot;       
+## [47] &quot;Discipline5&quot;             &quot;Mode.de.fonctionnement5&quot;
+## [49] &quot;Clientele5&quot;              &quot;Capacite.hommes5&quot;       
+## [51] &quot;Capacite.femmes5&quot;        &quot;Capacite.totale5&quot;       
+## [53] &quot;Discipline6&quot;             &quot;Mode.de.fonctionnement6&quot;
+## [55] &quot;Clientele6&quot;              &quot;Capacite.hommes6&quot;       
+## [57] &quot;Capacite.femmes6&quot;        &quot;Capacite.totale6&quot;       
+## [59] &quot;X&quot;
+</code></pre>
+
+<p>codes:</p>
+
+<ul>
+<li>200 maison de retraite</li>
+<li>207 accueil de jour</li>
+<li>202 logement foyer</li>
+</ul>
+
+<p>clientèle:</p>
+
+<ul>
+<li>700 Personnes Agées (Sans Autre Indication)</li>
+<li>701 Personnes Agées Autonomes</li>
+<li>711 Personnes Agées dépendantes</li>
+</ul>
+
+<p>Disciplines:</p>
+
+<ul>
+<li>Soins médico sociaux aux personnes âgées
+
+<ul>
+<li>177 Section Cure Médicale (dont)</li>
+<li>354 Restaurant pour Personnes Âgées</li>
+<li>355 Activité des Centres de Jour pour Personnes Âgées</li>
+</ul></li>
+<li>Hébergement personnes âgées
+
+<ul>
+<li>657 Accueil temporaire pour Personnes Âgées</li>
+<li>659 Hébergement en résidence pour personnes âgées</li>
+<li>924 Accueil en Maison de Retraite</li>
+<li>925 Hébergement Logement-Foyer Personnes Âgées Seules F1</li>
+<li>926 Hébergement Logement-Foyer Personnes Âgées Couple F2</li>
+<li>927 Hébergement Logement-Foyer Personnes Âgées F1 Bis</li>
+<li>938 Hébergement en Hospice</li>
+<li>961 Pôles d&#39;activité et de soins adaptés</li>
+<li>962 Unités d&#39;hébergement renforcées</li>
+<li>963 Plateforme d&#39;accompagnement et de répit des aidants (PFR)</li>
+</ul></li>
+</ul>
+
+<pre><code class="r">summary(as.factor(d$Code.categorie))
+</code></pre>
+
+<pre><code>## 200 202 207 
+## 221  55  16
+</code></pre>
+
+<p>On isole les rubriques pertinentes, correspondant au code 200, maison de retraite:</p>
+
+<pre><code class="r">epad &lt;- d[d$Code.categorie == 200, c(1, 4, 8, 9, 13, 25, 28, 31, 34, 37, 40, 
+    43, 46, 49, 52, 55, 58)]
+nrow(epad)
+</code></pre>
+
+<pre><code>## [1] 221
+</code></pre>
+
+<p>Pour chaque ligne on forme la somme des capacités, et on ajoute la colonne à <em>epad</em></p>
+
+<pre><code class="r">ct &lt;- epad[, seq(7, 17, 2)]
+sct &lt;- rowSums(ct, na.rm = T)
+summary(sct)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     4.0    46.0    69.0    73.1    90.0   350.0
+</code></pre>
+
+<pre><code class="r">epad &lt;- cbind(epad, sct)
+hist(sct, xlab = &quot;Capacité totale&quot;, main = &quot;Capacité des Ehpad en Alsace&quot;, 
+    ylab = &quot;Nombre d&#39;établissements&quot;, sub = &quot;(Données du répertoire FINESS au 1/08/2013)&quot;, 
+    col = &quot;lavender&quot;)
+legend(200, 100, legend = &quot;capacité moyenne: 73&quot;, bty = &quot;n&quot;, cex = 1)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAYAAACmKP9/AAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR4nO3debgdZX3A8e/NRhKSSJAYgoJsYZHNhdrKUkDU4hKIIriUCIVa68ISy1oEbLECUgQUpRXZAkUriOy1BkEQUHbcqAQEDUiEJCxZWEKS2z/eOd65hzlnzr33zJ2ZN9/P88xzzyxn5vfOnHt+Z955Z16QJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJGlgRgCzgduBJcCvgQuALcsMqslYoDcZGtZPhp6M5ScDSwnlyJo/kO10W2+b4dhhjKOVMrcNsB6wMtn+95rmlR2bJNVGD3A1fV+aTwErktdLgbeVF1o/awH3JENDI+axGcsfB9wKjBngdoYzwd9HX5kaw0HDGEcrZSfRT6W2vxwYn5pXdmySVBv7Er4snwbeQUj4awM/SKbfVF5oudol+E2AiYNY53Am+Ky4hzOOKm4bwmeuF3gh+btval7ZsUlSbTS+TD/dNH0z4EbgOmAK8E3g98DLhB8DVwFbJMumv3Q/DjwOPAwcSl/1+Ho56wCYAdwFLAMeA/6NcOZO8ve2ZCC1vcawVTL9DcD3gYXJNs4D1mlT/t2BnxNqK+4DPsCrE0jeOjdN9tPzyTLfS97TykAT/F8DdxP2y0+A6RnLDGW/d7IPmrXbJ+m43gU8kMR+S9N2s6wPrCIk939N1vGd1PysBN9u/w/1c5dXVkmqrCcIX5ZvbLPMtfRV318F/DIZvz+Zn/7SXUqoGn85Gf9Eh+vYi76ztmuABcn4GRnbAPhtanwe4Ut+HPAH4JVkG/+TzL+N0M6g2dsJyaQRx/2p8cZ2Olnn7cm0GwmJOK/mY6AJ/vlkG88l4zdnLDPY/d7JPmiWt0+a4/oZ8BKd1Qh9LlnuSsKPtsY6xmWUuaHd/h/q526gnylJqoQRwGryk823gEvpux6/HX1fsmPo/6V7ULLM3yXjd3e4jluS159K5m9GuP76BK9OGg3NibJx7fYbqWX+N5m2Z0a5Gl/WpxLOeHuA05q2k7fOEfQl1T0IZ3bnAGfRunFfc+1Demh1FgywE33JqHmZg5JpA93vneyDZnn7JB3XHsn8XZtib+WnyXKzkvHGD7mZGWWG/P0/1M/dQD9TklQZfyR8WbWrUh5F+MK9lNDCPn2GN5b+X7qvSd6zDn1f6D0drGNR8rpVy/1OEvw3U9Oah89lrHNhRtk3atpOJ+u8LjXtEeDLwKQW5UjHPY+QwNJD433p8jbOFMc3xdaN/d7JPmiWt0+yYh+Xs06SGHoJLegnJ9NOTaZdmlHmhnb7f6ifu4F+prSGG1V2AFLKPGAD4J3AnNT0zQnXZZcTqkA/RjgrvAC4l3AtuJ3GF/Dq5O8FhC/aVuto/F88O/Ai/FkjyS0g3O6XNo5XaySfdLJYNYh1fhA4MBl2IbTg3xnYLSfe7QlV13lWN/1tZ6D7vZN90Gwg+7kRR7vE3rBf8nck8EzTvL3pf108rd3+H+rnbqCfKUmqjI8QvnznA29Kpo0HLk+m/5CQ5Hvpa5jUqG7NOoM/KFmmUVX8s2Q8bx0/a3r/dMK150fJr6JfOxk/MRn/UmqZvyRU726SUfYfZSz/pabt5K2zB/gK8Plk3luS5V+i9TXa5pqHLFnlbZ7Wjf3eyT5olrdPOok9y8+T+Y/Tv1bjxWT6jIz15O3/oX7uBvqZkqTKGAFcT9+X3mOERk29yd8tgP+jr0r5SsIXYDq5pr90l9C/sdeHku3krWNm8vpl+jd2Ojl5f1aCWEZf9e1UYFqy/RXAJYTW1KsI1bDTMsr+TvraINybDOkqWDpcZ6Nh1/VJ2XtpX8PRWH/WffBfb1Pedgl+sPu9k33QLG+fDCbBb5zMW0W4ayPt68m8i1usp93+H+rnbqCfKUmqlJGEJ6jdRTjj+R3hy3TjZP7bCV/8Swmth3cl3HbUC+xP9u1ajwD/kNpG3jogVNHel8TwGHACfVWoWV/sRxJalj9LaBwFsAMwN5m+iFATMZ3W3gvcmWzzQeCQjO3krXMLQmO15wjJ4Ab69l2W3jbDD9uUt12CH8p+72QfNGu3TwaT4I9K5mW1st8jmfcc4dp683ra7f+hfu7yyipJUfPhI+Vwv0sV472TkiRFyAQvSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSSWYDJwCPAQsAZYnr08HJpUYlyRJtTOi7ABS5gATgH2AqcAUYAawKpknSZJq6FlgTMb0HuDxYY5FkqRaG1l2ACm7Am8HHgVeAEYBmwBHAauB75QXmiRJGqzJwGmE6+7LCNfgHwbOAF5TYlySJEmSJEmSJEVuC+B2YBHwDcI1eAgt63vLCkqSpDqq0m1y5wNXAlsTGv+dXG44kiTVV0/ZAaQ8B0wDXiQk+LuBjwJPAkvpLNZ1gP1bzBsF/JjQiE+SpKhV6Qz+j8AOyetVwDHAtxnYrXyrCffTZw2bAx/qVrCSJKkzMwln6uelpp0K/JbuXIPfH/hMF9YjSVLljcpfZNhcBWwDbJqadhxwLbB7GQFJklRXVUrwAPOToaGX0LL+9nLCkSSpnqp0DV6SJHWJCV6SpAhVKcE3GtO1GiRJUoeqlOC3Idz7PoNwz3vzIEmSOlSlRnargMsIvchp+KwFnAKsXXYgBTkPuKfsICRpuFUpwQOcVXYAa6Cp733vPrNPPPErZcfRdffc8zMOPfSgJzDBS1oDVS3BqwQTJkzkjW/cpOwwuu7xxx8rOwRJKk2VrsFLkqQuMcFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhShKiX4ycApwEPAEmB58vp0YFKJcUmSVDtVSvBzgAnAPsBUYAowA1iVzJMkSR0aVXYAKbsA+wIrUtPmAccB80uJSJKkmqrSGfztwBnAlsA4YCwwnVBt/0CJcUmSVDtVSvCzgBeAa4CFwGLgBmA0cECJcUmSVDtVqqJ/FjgmGSRJ0hBU6QxekiR1SZUSvLfJSZLUJVVK8N4mJ0lSl1TpGnw3bpObBnyxxbxNgXsGG5wkSXVSpQTfuE3uHEJC7wU2BA6h89vkFgGntZj3fqpVYyFJUmGqlOBnAccSbpN7PdADPJmMd3qb3CvAoy3mPQWsN8QYJUmqhSoleG+TkySpS6yyliQpQiZ4SZIiZIKXJClCVUrwvyW0nG81SJKkDlUpwW8D3E14uE1PxiBJkjpUpQS/CriM8IhaSZI0BFW6TQ7grLIDkCQpBlU6g5ekNUG7NkVjCI/o/sdhikURM8FL0vBKP077xqZ5nwKuBf5j+MKppHaNrfcCHgSeS/6+p4wA66BqVfSSFLtjU6/3bJo3F3h4GGOpqolN40cTajdGAP8F7A/cDHwIuJDweHM18Qxe0ppiPeAKYCHwEKH3yoa9CZ1aPQcsAI5MzeslJJingZ8CG3fwvnbbapyJXpX8fYDQPfalwE+Ax4DvEjrbytILfDnZ3omEHjTnAc8D/5wssy6hm+0FhD49Lk6mAZwHzE6t73zg88D6wOVJOR9N3j+tabsfBX4BLAaO6GBeJ+vMsiw1bALsBHyBcFI6C7gJWBt4mbDvlcEEL2lNcSYhyUwD/p6Q6NZK5p1MSLCvBd4H/FvTeycAGxAS/Jmp6a3e125bDTOTv29O5v8PsBnwJsItw+e1KcuvCFXT/0JIcNsCHwZOSOafReh6e9NknSsIvXUCfB/4YPJ6LWAfwg+K8wg/St4IvBX4XUYMGyXx7kf4kZE3L2+de7QpI4Sz9m8DhwErk3LcQEjuS4CrgU/mrGONZRW9pDXFe4EtCYnip8DmyWuAtwB/ARwI7EZILGkXJct+lXBGTs772m0ry56ERJu2qM3y3yf0ngmhi+2VhOv5Y5Np7yP8UHgxGf8C8Mvk9U2EHyVTgbcD9xPO8vcAPtC0nYVN4+cSzrpvAsZ1MC9vnT/JLt6f/RNwF+Fae9oywo+uw4GzCcdATTyDl7SmGAmsTo1Po++s+nuEZLEQOK7NOlYn62lo9b5228ryLKEKvfFgr7WBt7VZfgV91duNHw7N1d29Ta8bca8AridcXvgoIdk3YtgsFcMEYMemdS5tE1PWvE7W2cpIwt0EZ6embQycnrxeTri8sHWH61vjmOAlrSluBI4iJI53AD+nrxbz3YTq9esIrbShfw3n3yXjs4FbU9Nbva/dtpqNJvxQOJPQuGwyoSHZFwZexD/7nySusYSz6X8jVG03XAH8bRL/D5JpVxJ+pIwHXkeo/m73Y6cTeevcvc173wk8DjySmvYkcAihtqQH+AihBkIZTPCS1hSHAtsRGnxdChxEuI4LoXHaTwjXtl8L/C/h7LBhNPAnQtI5PDW91fvabSvtBsJ16RMJZ6TzCK3olxOqpwfrCEJi/z2hLcAY+jeKm0uoIbgpFdcXCD9IHgN+k7w33dhwMPLWeXOb9x4E/Khp2gpC+4GvEhrzfRSvwbe0Jj3jfX9Cy9Zvlh1IxWy0334H/OHssy8oO46uu+22m9h//71OJDSEkgarlzi/K+8k/G9cV3YgKoaN7CRpzTKaULuwIa8+Q1ZErKKXpPY+VnYAXTaDcI3+s4Qqb0XKM3hJau+7ZQfQZVcmgyLnGbwkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhShKiX4ycApwEPAEmB58vp0YFKJcUmSVDt5Cf5wYC4wOvn7DHBwQbHMASYA+wBTgSnADGBVMk+SJHVoVM78E4F3ADOBRcDOwE3ABQXEsguwL7AiNW0ecBwwv4DtSZIUrbwz+FeAtYADgQsJZ9OjC4rlduAMYEtgHDAWmE6otn+goG1KkhSlvAR/PHArIbHPBX4EnFBQLLOAF4BrgIXAYuAGwg+KAwrapiRJUcqroj8/GRo2Li4UngWOSYbB2oj+8aZNJfxAkSQpenkJ/gHgzanx0cDvCIm0iuYD724xb39gvWGMRZKk0rSqor8R6AV2SP42hhXArwqKZTdCgv4NsGMSw1LgNsJ1eUmS1KFWCf5dQA9wdfI3Pby/oFi+BnweOBO4G7iXcEngEuDbBW1TkqQo5TWymzksUQSbEX5QfD8ZP4vQ0O4iYPthjEOSpNrLS/CzCS3be5uGIvyO8JCbfZPxw4H1gSOBXxa0TUmSopTXyO4E4AOEh9sU7TDgUsJjav8COA14BPgFxT09T5KkKOUl+MeBm4cjEOAWYMPU+J7DtF1JkqKTV0V/KqGKfOIwxCJJkrok7wz+suTvV5qm9xQQiyRJ6pK8BG8ilySphqrUH7wkSeqSvAS/AXAd8DTh8bTnAuOLDkqSJA1NXoI/DbgLmEJ46MwWwNlFByVJkoYmL8HvTF9CXw58nPAwGkmSVGF5CX4C8HJqfCmhb3hJklRheQn+FmDv5PWmhA5hris0IkmSNGR5Cf4wYBahev4WYBnh+fSSJKnC8u6DXwDMGI5AJElS9+SdwR8PvMjw9CYnSZK6JC/BH0M4gx9BeKpdY5AkSRWWl+CfAm7Fs3ZJkmolL8FfBnya/Gv1kiSpQvIS/GrgLOAVvAYvSVJt5CX4TwPb4TV4SZJqJS/BXwhsC4wehlgkSVKX5F1bP7bFdM/iJUmqsLwEbyKXJKmG8qroJUlSDeUl+A0Incs8DWwEnAuMLzooSZI0NHkJ/jTgLmAKsBjYgr7+4SVJUkXlJfid6Uvoy4GPA/sUGpEkSRqyvAQ/AXg5Nb4UWFVcOJIkqRvyEvwtwN7J602BrxGuyUuSpArLS/CHAbMI1fO3AMuA2UUHJUmShibvPvgFhO5iJUlSjeSdwR8OzCU8qnYu8AxwcNFBSZKkock7gz8ReAcwE1hEaFV/E3BBwXFJkqQhyDuDfwVYCziQ0PHMKux4RpKkystL8McDtxIS+1zgR8AJRQclSZKGJq+K/vxkaNi4uFAkSVK32NmMJEkRshW9JEkRshW9JEkRshW9JEkRshW9JEkRshW9JEkRykvw6nM18PqygyjAmLIDkCR1X1aC7wVOA45NXmfpKSyiitppp932vuKKuWWH0XX33PNzLrnkW2WHIUnqsqwE39PitSRJqgkfdCNJUoRaVdHn8cxekqQKy6uilyRJNVSlKvrJwCnAQ8ASYHny+nRgUolxSZJUO3kJfnPgBuB5wqNqLwfeUFAsc4AJwD7AVGAKMIPwkJ05BW1TkqQo5SX4S4H7gM2ALYB5FJdsdwH+Cfgt8CLwQrK944C3FbRNSZKilPegm80JiXdlMv5F4MmCYrkdOAM4B5hPaOy3IXAI8EBB25QkKUp5Z/DfBE4CNk2GE4GvFRTLLMJZ+zXAQmAx4fLAaOCAgrYpSVKUOr1N7gtN4ycXEMuzwDHJIEmShiC22+Q2on/nOGlTCb3hSZIUvYF2NjOKkEAPLCCW1wP/ApxL6If+W8C2wN3AJ4FHOljHfODdLebtD6w39DAlSaq+vGvwRwEvE6rtewmJd2pBsVxOqKafB1wE3AhMB34CfLugbUqSFKW8BH8k8FeEW+M2ILRov7GgWKYTGvEtBTYBvgEsIPRs9+aCtilJUpTyEvxawC+BW4EdgQsppnoe4ApCtfz2wH8CRwDTgNnAXQVtU5KkKOVdg59PSLA/BQ4HHqO4KvpDCUn9IuCNhMfTzgL+F/hEQduUJClKeQn+BOBfga8CYwgPozm2oFhWAv+eDJIkaQjyEvzVyQDw4YJjkSRJXZJ3Db75EbGjCdX2kiSpwlol+BsJt8XtQN8tcr3ACuBXwxOaJEkarFYJ/l2EJ9pdnfxND+8fntAkSdJg5VXRzxyWKCRJUlflJfgNgR8SenfbiHCf+sSig5IkSUOTleD/MfX6dEIHLesBi4AphC5kJUlShWUl+M8DZwAjgZ0JZ+0Q+mo/BNhreEKTJEmDlZXgtwV+T3g2/GhgdWreSkJLekmSVGFZD7pZAXw9eX0jfQ3tJgNnAlcOQ1ySJGkI8hrZzSb0o76M8NCbRcAxRQclSZKGptWjanuBxcCleKucJEm10yrB9wxrFJIkqavyquglSVINZZ3B93bwPs/wJUmqsKwz+PRz548ALgLWT4aLgIOGJzRJkjRYef3BHwZsDyxPxj9HaE1/cZFBSZKkocm7Br9O0zIjCffDS5KkCstL8D8CzqWviv5cQuczkiSpwvIS/OeSv78BfgW8Qqi2lyRJFZZ3DX4xcMBwBCJJkrrH++AlSYqQCV6SpAiZ4CVJilBegt8AuA54GtiI0Ip+fNFBSZKkoclL8KcBdwFTCA3utgDOLjooSZI0NHkJfmf6Evpy4OPAPoVGJEmShiwvwU8AXk6NLwVWFReOJEnqhrwEfwuwd/J6U+BrhGvykiSpwvIS/GHALEL1/C3AMmB20UFJkqShyXuS3f3AO4EHhyEWSZLUJXln8EcBnyG0opckSTWRdwY/J/n72abpPQXEIkmSuiQvwZvIJUmqIR9VK0lShPIS/ObADcDzwCLgcuANRQclSZKGJi/BXwrcB2xGeEztPPquy0uSpIrKuwa/ObALsDIZ/yLwZJEBSZKkocs7g/8mcBLhKXabAicSnmYnSZIqLOsMvjdj2heaxk8uIBZJktQlWQneW+MkSao5b5OTJClCeQn+eOBFQrV9epAkSRWWl+CPAWYky/WkBkmSVGF5Cf4p4FY8a5ckqVbyEvxlwKfJv19ekiRVSF6CXw2cBbxC8dfgJwOnAA8BS4DlyevTgUkFbVOSpCjlJfhPA9sxPNfg5wATgH2AqYQ+6GcAq/DxuJIkDUhe1fuFwLaEZ9CvKDiWXYB9m7YzDzgOmF/wtiVJikpegj+2xfQizuJvB84AziEk9F5gQ+AQ4IECtidJUrTyquh7WgxFmAW8AFwDLAQWE7qqHQ0cUNA2JUmKUpVaxz9LuO/+mCGsYyywTYt5mxIe2iNJUvTyEvy6wFeB9xHO9q8HjiAk4+GwC3DbAJafBOzXYt5WwK+HHJEkSTWQl+DPJpz1bke4Jv5l4EzgoGLD+rOfMrBLAk/Tut3A/sB6Q45IkqQayEvw7wY2Bl5Kxg8FHi0oluXA+IzpjfvufUSuJEkdqlJvcn8J3EuoYk835vP595IkDVBegp8LfB14XTJ8LZlWhF8DewJ/C/w7ofW8JEkahLwEfziwFvBgMowlNLIryvOEh90sprgfEpIkRS/vGvwzwCeGI5CU1YRn0v+ccEYvSZIGKCvBd9KZzHBcE785GSRJ0gBlVdFnPbluFDAbWEp4nKwkSaqwTp5ktzVwPvAawm1zdxYakSRJGrJ2jexGER4acxdwE/BWTO6SJNVCqzP47QldxY4AdsXe3CRJqpWsM/gvErpuvRJ4OyZ3SZJqJyvBnwRMAL4ErCC0qm8eJElShWVV0ftYWEmSaq5Kz6KXJEldYoKXJClCJnhJkiJkgpckKUImeEmSImSClyQpQiZ4SZIiZIKXJClCJnhJkiJkgpckKUImeEmSItSqu1ip9hYufArgE8BflxxKEXqBI4Fflh2IpGoywStaf/rTAo466qTNZ88+fvOyY+m2OXO+xbHHfu5NmOAltWAVvSRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJEapSgp8MnAI8BCwBlievTwcmlRiXJEm1U6UEPweYAOwDTAWmADOAVck8SZLUoVFlB5CyC7AvsCI1bR5wHDC/lIgkSaqpKp3B3w6cAWwJjAPGAtMJ1fYPlBiXJEm1U6UEPwt4AbgGWAgsBm4ARgMHlBiXJEm1U6Uq+meBY5JhsNYB9m8xb0fg90NYtyRJtVGlBN8Nqwk/FLIsA3qHMRZJkkpTpQS/BXAh4Rr8fwOHAysJLeuXAj0drGMJcHmLeT3AekMPU5Kk6qvSNfjzgSuBrYGRwMnlhiNJUn1VKcFvB3yT0MDus8DfEM7qJUnSAFUpwf8R2CF5vYrQ2O7bhLN5SZI0AFVK8McDc4HzkvG5wB3AnaVFJElSTVWpkd1VwDbApqlpxwHXAruXEZAkSXVVpQQP4ZG06cfS9hKecHd7OeFIklRPVaqilyRJXWKClyQpQiZ4SZIiZIKXJClCJnhJkiJkgpckKUImeEmSImSClyQpQiZ4SZIiZIKXJClCJnhJkiJkgpckKUImeEmSImSClyQpQiZ4SZIiZIKXJClCJnhJkiJkgpckKUImeEmSImSClyQpQiZ4SZIiZIKXJClCJnhJkiJkgpckKUImeEmSImSClyQpQiZ4SZIiZIKXJClCJnhJkiI0quwAJA3cqlWrADYB3lZyKEVYAfyq7CCkujPBSzX0wAN38573fODL06dv/eWyY+m2O+74Cffff/f2mOSlITHBSzW0cuVKZs78CDNnfqTsULru5JOP5f77716r7DikuvMavCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRMsFLkhQhE7wkSREywUuSFCETvCRJETLBS5IUIRO8JEkRsj94SRo+7wd2LTuIgkwDFpQdREHuA75XdhADVaUEPxk4GvgQ4YMyEngCuAY4GVhSXmiS1BV/f8UVc2dOmDCx7Di67sMffjdXXDG37DAKsddef3ULJvghmQP8HtgH+APQA7wBODiZN7O0yCSpS7bddgcmTVqn7DC6buTIkWy//VvLDqMovWUHMBhVSvC7APsCK1LT5gHHAfM7XMc04Ist5r0B+PFgg3viiT9w9NGfGezbK2vRooXMm/dglGX7v//7NStXvsKCBX8sO5Su+8Uv7mXhwqe5445byg6l6+688zaAY4HFJYdShG1OOulIRo8eU3YcXffyyy9H+T1SZz1lB5ByHfAYcA4hofcCGwKHANsAMzpYx+jkPa0sAF4cZHzrA+MH+d6qG0P/H1ax6CF8JmIs2yjC/8iqsgMpwEjiLBfAOAb/HVR1o4FXyg6iIM8mgwZpMnAa8BCwDFgOPAycAbymxLgkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkqW6q1NlM1f03sFnZQRRgJDABeL7sQAowJhmWlR1IAcYDq4GXyg6kABMJ5Yqx45J1CP9rtex+NMe6wDNlB1GQx4EPlh2EinNz2QEUZCPg4rKDKMiewAllB1GQTwEfKzuIgpwO7Fh2EAX5ASHJxyjW70ioadlGlB2AJEnqPhO8JEkRMsFLkhQhE7wkSREywUuSFKFRZQdQI/eWHUBBXgJ+U3YQBXkGeLTsIAryBPBC2UEU5GFgSdlBFOSXwMqygyhIrN+REHfZJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJElSxyYD1xIee3pNMl5XtwO9qeE/UvPqWs6RwG8zprcrTx3K2qpcdT+G+wC/Bp4DbgW2SM2r+zFrV7a6H7e9gAcJZXsQeE9qXtjyeAAAAAraSURBVN2PW7uy1fq42dlMvmOAPwDTgPnA0eWGM2g9wFbAG4CJyXBEan4dy3k4cAewZca8duWpellblavux3Aj4FLgk4QYrwEuTM2v8zFrV7a6H7cRwH8BhwLrAicSz3FrV7a6Hzd14CHCQSb5+1CJsQzF+sBS4J7k71XA61Lz61jOPYAPEH5ZN2tXnqqXtVW56n4MdwfOS41PARalxut8zHanddnqftzGAO8jJLyJwAz6d1BV5+PWrmx1P27qwDJgXPJ6HPXt5erNwE3J33WBi4HvpObXuZxZCb5deepS1uZyxXQMRwLnAt9ITYvhmMGryxbLcZtA+EyuBnZKTY/huGWVLZbjpjaWA2OT1+OT8RhMI1w7aqhzObMSfLvy1KWsWeVKq+sxfBdwH3Aq/busjuGYtSpbWl2PG8DawD8Dd6emxXDcILtsaXU+bmrhYWB68no6MK/EWIbirfT/1f1aYEFqvM7lzEqE7cpTl7I2l6vux7AHOIVXN0BrqPMxa1e2uh+3jYHTU+NTCWevDXU+bhvTumx1P242suvAtcDBhH/gg4Gryw1n0NYGfgBsTbjudALhmlJDLOVsaFeeupa17sdwJ+CDwN7Ak4Rq0Qmp+XU+Zu3KVvfj9iRwCLAbIcaPAPen5tf5uLUrW92PmzqwDnA98AShZexryg1n0HqAzwCPAAsJ15MmpebXuZxZZ/DtylOXsjaXq+7H8Hj633LUGBrqfMzala3uxw1CAryXUEV9B32Ny6Dexw1aly2G4yZJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJktYAOwA/Bp4DFgD/CUwsKZbeNvPGAPOAfxymWKB9PJIkVdaGwJ+AjwETgE2Aq4CLS4rn1NTrG5vmHQqckfP+5vcMdTkTvCSpls4HPt80bX3gTmCt4Q+nn+bkuhUwcoDvGa7lJEmqlN8Sztrb2Rt4gL4q/CNT83qBo4GngZ8CG3fwvvWAK4CFwEPAvk3rg1CL0Ju8fwpwKaGmYT7wXULNQ7P0e9YF5iTbfZJQI7FuxnKdlA/Cj57Lk3I+mqx7WkYMkiRVwovA2JxlfkFIeiOBtwAvp+b1Av8KjAK+DPygg/ddAnwlec+uwDP01Rakz5jTyf5vgbUJlxH+Cfhhi1gb75kDfBsYlwznARdmLNdJ+QCuBT6SrGsd4CTguhYxSJJUunnAphnTZwEbJK9HAH8JHEw4E25Owo33rwcsTs1r9b5FwGtTy61LX9V7VoJfmrxODwtblCe9jdelpk8FnspYrpPyASzLiOHpFjFIklS6OYQq9rTXA6sJVeMQqtMvA2YQkn6rBL8uoZqbnPc9C0xOLbcNMD61Pppez29afjywUYvypBP8lNT01yXTmpdrF2d6ucfp/0No7TYxSJJUuo0JZ8MHApOALYGbgf9OLfM8IQn3EM5yewnV6ySvT07GTwau6eB9lxOq80cC7yCcoU9KrY/U69HAvwMXEW7dm0y4DPCtFuVpvOeSZJmx9FXRz8lYrpPyAZydrGM84cfCjcC5LWKQJKkS3k5oILcE+CMhca2Tmv9Zwo+AXwNHEa5/N26j6yXc2rYIuJ3+DfZavW99wjXtxcDvyG5kB3A94ex9PPANQgO4RYQGd63u02+857WEJP+n5H3pRnbp5TopH8n2LiBU8y8kXN9fu0UMkiTVnreRSepnRNkBSJKk7st7WIWkeniIULUtSZIkSZIkSZIkSaqfGcDfJ697gZXJ8ALhNq1dhymO4eq6tFut1MvoajVLN8qTPu7poXn9vcAXc2Joty4ID7O5mnB73lOE5wNsMID5w+1Y4M0VWMdAfZLQo6GkNdRIwkNYxiXj6S/qicB+hMeHvmUYYumk69Ju6FaCLzreTrtfPTV/kVzt9klz8l4KbJezTDs3AccRHrAzjvAM/esHML8IIwmdBGX5LuGBPZMJzxp4hvDwofSTAHcjdK6zNPn71y3WsQ+hAeVzwK3AFqll2q2/XYx7AQ8m63wQeE8yfXyyrbJ7MJRUko8Dp6XGs76cPwt8bxhi6aTr0m7oVoIvOt7hvB9+IAn+eOAe+p5Ml7VMO88TnmPfMIH+T8TLm99thxO68s2KexpwZvL6VOAcQsI8BzgltdzjhB/Do4H96XvgT3odGxF+ALyD8MPlSEINWUO79beKcQTh4UZ7Jq8/THiwUsNXgE9kFVpS/H5AOKtoyPqS25jwdDRo32Vo4/0fJfQmthg4ooN57bouzetS9GD6nsZ2WEbs6wL/lWzvkWSZdsmoVXLqJXQW86eceBvLZnX3mleW9DY67aa1Oeb0OgbSHetAEvxo4H7gmDbLtHMVIbF9kJC8Bzo/rZNuafPi2gP4QIv5/5DMh3D74lbJ662S8YbfEC5zTQYOIZxJN69jd8KjeRum0P9Z/u3W3yrGMcD7CLUDEwmX236Tmj+T0C+ApDXQE8CbUuNZX3JjgZeS1510GXo04QvnnYTr+Hnz2nVdmtel6LOE6uItgLkZsV9CSPCTkvVfxOAT/DmE56vndbXaqrvXvLKkt5GOZSDdtKbXMZDuWJt7deulf7uM5m29hXA2ulWLZbKGhrUI++xOQte6lxF+jHQ6P62TbmlbjTfLmn8JfTUVy+i7lDWO8Bjihh3pX9YdW6yjYSTh8cXfSE1rt/52MUL4HPYSOjTaKTV9W0LtgqQ10Ar6eh2D1mfwjyavO+kydGLTeN68dl2X5nUpejUhke3Hq79EIZy5p5PD+hkx0WY8Pb3Rk1peV6u9ZHf3mleW9DbSsQykm9b0OgbSHetAzuAbvkQ40x7ZZpksowg/8iD0sjeHUOXf6fy0Trql7TSu5vkT6d8Bz3LCj10I/zPLU/N+TLjUNY1QLd5oP9G8DoB3AfcRquTTn9l26++kDGsD/wzc3TTt5ezFJcVuEX1VyJB/DX4gXYY2j7ea167r0rwuRXuAvwG+Q/YZ/EL6J/ipbWKamBFj1nJ5Xa2mE3y6u9e8srTaPwPZ5+nXA+mOdTAJfi1CVfThbZbJspTQw17DlGRap/PTOumWFtof26zlIVzP/lBq/GFgevJ6OuEOioZl9H3OXpuKN72OHsJ19ebGdZ2sv1WMGwOnp8anJrGk56d/fEpag9xKOKNoaP5S/DD9W9F30mUoLcZbzWvXdWlel6K/J3xZbk1ofdzsYvp6Slub0HtZOo6XCNc3ewiXDzpJ8HldrfaS3d1rXlmy9k+n3bRmvR5Id6yDSfAAf0VfjUYn64Jw29t3k5imEfbR1QOYn9auW9pOj22ruL9F/zYAXyUk6EaiTifWOwiNDycAs4HbMtaxM6EV/DrJtAl0vv5WMY4hfO53S953GKHdR8O7Cf/jktZAxxG+kBp6aX8ffF6XoYNJ8O26Ls3rUvQzhCrwpwiNm5qtSzjDa3SjemBTHEcSviB/lTGvVTnyulrtJbu717yyNG+7025a2521dtod62ATPIQfPM3LtLsPfjxwPqHB4LOENg0bDGB+WrtuaTs9tlllG0XYd2nrEI7JE4Qfba9JzduKcKyXJn+3yljH8bRvm9Bu/VkxNuwG3Eso6x30tYuA8L99bMZ7JK0B1iH8wu/JW1Ady0sk0nDoAW4h+4eCasbuYjUYzxEaqe1ZdiCSumpPwv/282UHIqk84+h/q5yG5qNlByAR/qfH5S4lSZKkcvw/ri7sCgghxxUAAAAASUVORK5CYII=" alt="plot of chunk unnamed-chunk-4"/> </p>
+
+<pre><code class="r">print(&quot;EHPAD ayant plus de 150 places d&#39;hébergement&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;EHPAD ayant plus de 150 places d&#39;hébergement&quot;
+</code></pre>
+
+<pre><code class="r">epad[epad$sct &gt; 140, c(1, 2, 4, 18)]
+</code></pre>
+
+<pre><code>##     Numero.FINESS                       Raison.sociale     Libelle.routage
+## 73      670787894     MR EMMA\xdcS KOENIGSHOFFEN-EHPAD  STRASBOURG CEDEX 2
+## 108     670793736 MR HOPITAL LOCAL DE MOLSHEIM - EHPAD            MOLSHEIM
+## 115     670794395                 MR NEUENBERG - EHPAD           INGWILLER
+## 116     670794478             CHDB BISCHWILLER - EHPAD   BISCHWILLER CEDEX
+## 118     670794635           M.R. AMRESO-BETHEL - EHPAD      OBERHAUSBERGEN
+## 180     680003019              MR DU CDRS COLMAR EHPAD        COLMAR CEDEX
+## 205     680004793    CENTRE POUR PERSONNES AGEES EHPAD        COLMAR CEDEX
+## 253     680011384                  MR DE RIXHEIM EHPAD       RIXHEIM CEDEX
+## 255     680011400            MR &#39;LES MAGNOLIAS&#39;  EHPAD            SIERENTZ
+## 257     680011426    MR HIVA STE MARIE AUX MINES EHPAD STE MARIE AUX MINES
+## 262     680012481                  M R DE L&#39;ARC  EHPAD            MULHOUSE
+##     sct
+## 73  151
+## 108 164
+## 115 144
+## 116 200
+## 118 190
+## 180 350
+## 205 252
+## 253 168
+## 255 167
+## 257 141
+## 262 165
+</code></pre>
+
+<p>Différences entre le 67 (br) et le 68 (hr):</p>
+
+<pre><code class="r">pop.67.2010.municipale &lt;- 1095905
+pop.68.2010.municipale &lt;- 749782
+
+br &lt;- epad[substr(epad$Numero.FINESS, 1, 2) == &quot;67&quot;, ]
+hr &lt;- epad[substr(epad$Numero.FINESS, 1, 2) == &quot;68&quot;, ]
+nrow(br)
+</code></pre>
+
+<pre><code>## [1] 134
+</code></pre>
+
+<pre><code class="r">sum(br$sct)
+</code></pre>
+
+<pre><code>## [1] 9366
+</code></pre>
+
+<pre><code class="r">summary(br$sct)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     4.0    42.2    64.0    69.9    90.0   200.0
+</code></pre>
+
+<pre><code class="r">sum(br$sct) * 1e+05/pop.67.2010.municipale
+</code></pre>
+
+<pre><code>## [1] 854.6
+</code></pre>
+
+<pre><code class="r">
+nrow(hr)
+</code></pre>
+
+<pre><code>## [1] 87
+</code></pre>
+
+<pre><code class="r">sum(hr$sct)
+</code></pre>
+
+<pre><code>## [1] 6795
+</code></pre>
+
+<pre><code class="r">summary(hr$sct)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     5.0    52.5    73.0    78.1    90.0   350.0
+</code></pre>
+
+<pre><code class="r">sum(hr$sct) * 1e+05/pop.68.2010.municipale
+</code></pre>
+
+<pre><code>## [1] 906.3
+</code></pre>
+
+</body>
+
+</html>
+

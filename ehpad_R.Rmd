@@ -1,0 +1,133 @@
+EHPAD
+========================================================
+
+- Echec ouverture fichier XML de open data des établissement médico-sociaux: fichier trop volumineux
+- extraction des données à partir de la BD Finess *finess.sante.gouv.fr/finess/jsp/actionRechercheSimple.do*
+- critères de recherche: 
+  - Localisation = ALSACE
+  - Domaine: Hébergement personnes âgées [4420]
+  - Statut Juridique: Tous
+  - Type: Etablissement
+  - Etat: Ouvert
+  - Catégorie: Toutes
+Le fichier est renommé en *ehpad_alsace.csv* et sauvegardé dans *f<-"~/Documents/NRBCE/PBE Alsace/Evac_EHPAD/ehpad_alsace.csv"*
+- La terntative de lecture échoue à cause des caractères accentuées des nom de colonnes: *erreur dans make.names(col.names, unique = TRUE) :  chaîne de charactères multioctets incorrecte 5* => suppression via gedit de tous les caractères accentués (é, è, â).
+- après correction la lecture fonctionne:
+
+f<-"~/Documents/NRBCE/PBE Alsace/Evac_EHPAD/ehpad_alsace.csv"
+d<-read.table(f,header=TRUE,sep=";",as.is=TRUE)
+
+save(d,file="ehpad_alsace.rda")
+```{r}
+f<-"~/Documents/NRBCE/PBE Alsace/Evac_EHPAD"
+setwd(f)
+load("ehpad_alsace.Rda")
+names(d)
+```
+codes:
+- 200 maison de retraite
+- 207 accueil de jour
+- 202 logement foyer
+
+clientèle:
+- 700 Personnes Agées (Sans Autre Indication)
+- 701 Personnes Agées Autonomes
+- 711 Personnes Agées dépendantes
+
+Disciplines:
+- Soins médico sociaux aux personnes âgées
+  - 177 Section Cure Médicale (dont)
+  - 354 Restaurant pour Personnes Âgées
+  - 355 Activité des Centres de Jour pour Personnes Âgées
+- Hébergement personnes âgées
+  - 657 Accueil temporaire pour Personnes Âgées
+  - 659 Hébergement en résidence pour personnes âgées
+  - 924 Accueil en Maison de Retraite
+  - 925 Hébergement Logement-Foyer Personnes Âgées Seules F1
+  - 926 Hébergement Logement-Foyer Personnes Âgées Couple F2
+  - 927 Hébergement Logement-Foyer Personnes Âgées F1 Bis
+  - 938 Hébergement en Hospice
+  - 961 Pôles d'activité et de soins adaptés
+  - 962 Unités d'hébergement renforcées
+  - 963 Plateforme d'accompagnement et de répit des aidants (PFR)
+
+
+```{r}
+summary(as.factor(d$Code.categorie))
+```
+On isole les rubriques pertinentes, correspondant au code 200, maison de retraite:
+```{r}
+epad<-d[d$Code.categorie==200,c(1,4,8,9,13,25,28,31,34,37,40,43,46,49,52,55,58)]
+nrow(epad)
+```
+Pour chaque ligne on forme la somme des capacités, et on ajoute la colonne à *epad*
+```{r}
+ct<-epad[,seq(7,17,2)]
+sct<-rowSums(ct,na.rm=T)
+summary(sct)
+epad<-cbind(epad,sct)
+hist(sct,xlab="Capacité totale",main="Capacité des Ehpad en Alsace",ylab="Nombre d'établissements",sub="(Données du répertoire FINESS au 1/08/2013)",col="lavender")
+legend(200,100,legend="capacité moyenne: 73",bty="n",cex=1)
+print("EHPAD ayant plus de 150 places d'hébergement")
+epad[epad$sct > 140,c(1,2,4,18)]
+```
+Différences entre le 67 (br) et le 68 (hr):
+```{r}
+pop.67.2010.municipale<-1095905
+pop.68.2010.municipale<-749782
+
+br<-epad[substr(epad$Numero.FINESS,1,2)=="67",]
+hr<-epad[substr(epad$Numero.FINESS,1,2)=="68",]
+nrow(br)
+sum(br$sct)
+summary(br$sct)
+sum(br$sct)*100000/pop.67.2010.municipale
+
+nrow(hr)
+sum(hr$sct)
+summary(hr$sct)
+sum(hr$sct)*100000/pop.68.2010.municipale
+
+```
+En Résumé
+=========
+On trouve en Alsace 221 EHPAD (Répertoire FINESS 2013), 137 dans le BR et 87 dans le HR
+parametre  |  Bas-Rhin  | Haut-Rhin  
+-----------|------------|----------  
+nombre  |  137  |  87  
+places  |  9366  |  6795  
+pour 10^5 h  |  854  |  906  
+cap.min  |  4  |  5  |  
+cap.max | 200 | 350  
+mediane | 64 | 70    
+moyenne | 73 | 78  
+
+Etablissements ayant 150 places ou plus:
+     Numero.FINESS                       Raison.sociale     Libelle.routage
+ 73      670787894     MR EMMA\xdcS KOENIGSHOFFEN-EHPAD  STRASBOURG CEDEX 2
+ 108     670793736 MR HOPITAL LOCAL DE MOLSHEIM - EHPAD            MOLSHEIM
+ 115     670794395                 MR NEUENBERG - EHPAD           INGWILLER
+ 116     670794478             CHDB BISCHWILLER - EHPAD   BISCHWILLER CEDEX
+ 118     670794635           M.R. AMRESO-BETHEL - EHPAD      OBERHAUSBERGEN
+ 180     680003019              MR DU CDRS COLMAR EHPAD        COLMAR CEDEX
+ 205     680004793    CENTRE POUR PERSONNES AGEES EHPAD        COLMAR CEDEX
+ 253     680011384                  MR DE RIXHEIM EHPAD       RIXHEIM CEDEX
+ 255     680011400            MR 'LES MAGNOLIAS'  EHPAD            SIERENTZ
+ 257     680011426    MR HIVA STE MARIE AUX MINES EHPAD STE MARIE AUX MINES
+ 262     680012481                  M R DE L'ARC  EHPAD            MULHOUSE
+ 
+ Places
+151
+164
+144
+200
+190
+350
+252
+168
+167
+141
+165
+
+
+
