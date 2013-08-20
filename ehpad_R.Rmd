@@ -14,14 +14,13 @@ Le fichier est renommé en *ehpad_alsace.csv* et sauvegardé dans *f<-"~/Documen
 - La terntative de lecture échoue à cause des caractères accentuées des nom de colonnes: *erreur dans make.names(col.names, unique = TRUE) :  chaîne de charactères multioctets incorrecte 5* => suppression via gedit de tous les caractères accentués (é, è, â).
 - après correction la lecture fonctionne:
 
-f<-"~/Documents/NRBCE/PBE Alsace/Evac_EHPAD/ehpad_alsace.csv"
+f<-"data/ehpad_alsace.csv"
 d<-read.table(f,header=TRUE,sep=";",as.is=TRUE)
 
 save(d,file="ehpad_alsace.rda")
 ```{r}
-f<-"~/Documents/NRBCE/PBE Alsace/Evac_EHPAD"
-setwd(f)
-load("ehpad_alsace.Rda")
+
+load("data/ehpad_alsace.Rda")
 names(d)
 ```
 codes:
@@ -92,6 +91,7 @@ sum(hr$sct)*100000/pop.68.2010.municipale
 En Résumé
 =========
 On trouve en Alsace 221 EHPAD (Répertoire FINESS 2013), 137 dans le BR et 87 dans le HR
+
 parametre  |  Bas-Rhin  | Haut-Rhin  
 -----------|------------|----------  
 nombre  |  137  |  87  
@@ -102,22 +102,24 @@ cap.max | 200 | 350
 mediane | 64 | 70    
 moyenne | 73 | 78  
 
-Etablissements ayant 150 places ou plus:
-     Numero.FINESS                       Raison.sociale     Libelle.routage
- 73      670787894     MR EMMA\xdcS KOENIGSHOFFEN-EHPAD  STRASBOURG CEDEX 2
- 108     670793736 MR HOPITAL LOCAL DE MOLSHEIM - EHPAD            MOLSHEIM
- 115     670794395                 MR NEUENBERG - EHPAD           INGWILLER
- 116     670794478             CHDB BISCHWILLER - EHPAD   BISCHWILLER CEDEX
- 118     670794635           M.R. AMRESO-BETHEL - EHPAD      OBERHAUSBERGEN
- 180     680003019              MR DU CDRS COLMAR EHPAD        COLMAR CEDEX
- 205     680004793    CENTRE POUR PERSONNES AGEES EHPAD        COLMAR CEDEX
- 253     680011384                  MR DE RIXHEIM EHPAD       RIXHEIM CEDEX
- 255     680011400            MR 'LES MAGNOLIAS'  EHPAD            SIERENTZ
- 257     680011426    MR HIVA STE MARIE AUX MINES EHPAD STE MARIE AUX MINES
- 262     680012481                  M R DE L'ARC  EHPAD            MULHOUSE
+Etablissements ayant 150 places ou plus: 
+
+   |  FINESS           |            Raison.sociale  |   Libelle.routage | Places
+------|----------------|-----------------|--------------|----------
+ 73    |  670787894  |   MR EMMA\xdcS | KOENIGSHOFFEN-EHPAD  STRASBOURG CEDEX 2 | 151
+ 108     670793736 MR HOPITAL LOCAL DE MOLSHEIM - EHPAD            MOLSHEIM  
+ 115     670794395                 MR NEUENBERG - EHPAD           INGWILLER  
+ 116     670794478             CHDB BISCHWILLER - EHPAD   BISCHWILLER CEDEX  
+ 118     670794635           M.R. AMRESO-BETHEL - EHPAD      OBERHAUSBERGEN  
+ 180     680003019              MR DU CDRS COLMAR EHPAD        COLMAR CEDEX  
+ 205     680004793    CENTRE POUR PERSONNES AGEES EHPAD        COLMAR CEDEX  
+ 253     680011384                  MR DE RIXHEIM EHPAD       RIXHEIM CEDEX  
+ 255     680011400            MR 'LES MAGNOLIAS'  EHPAD            SIERENTZ  
+ 257     680011426    MR HIVA STE MARIE AUX MINES EHPAD STE MARIE AUX MINES  
+ 262     680012481                  M R DE L'ARC  EHPAD            MULHOUSE  
  
- Places
-151
+   
+151  
 164
 144
 200
