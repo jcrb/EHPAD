@@ -131,5 +131,79 @@ Etablissements ayant 150 places ou plus:
 141
 165
 
+Recommandations
+===============
+- caractristiques des EHPAD en Alsace
+- quelle répartition des GIR ?
+- les PA davraient pouvoir être redirigées en priorité sur d'autres EHPAD car n y trouve les locaux, le matériel et les personnels aptes à les recevoir
+- tout EHPAD devrait avoir un plan accueil massif qui prévoit notemment le nombre de résidents qu'elle pourrait accueillir dans une situation exptionnelle.
+- le plan d'évacuation doit prendre en compte le personnel
+- les établissements devraient être encouragés à développer des conventions d'assistance mutuelle
+- exercices d'évacuation limiée pour habituer les résidents à adopter ls bons comportements en cas d'évacuation
+- labelliser les résidents en fonction de l'aide qu'ils recquirent en cas 'évacuation ccode de couleur)
+- évacuer avec les prothèses
+- les pancartes sont plus visibles que les bracelets. Elle comprte un code de couleur, un n° identification avec code barre, nom, prénom, contacts, n° de chambre, photo numérique récente
+- recenser les transporteurd de fauteuils roulants
+- regroupement par bus = 1 étage. Permet une mise a l'abri immédiate
+- chaque établissement dispose d'une ist des EHPAD les plus proches
+- proximité de toilettes pour handicapés
+- protection de l'intimité
 
+KPMG a le plaisir de vous présenter les résultats de l’
+observatoire 2012 sur les EHPAD.
+===============================
+ref: http://www.kpmg.com/FR/fr/IssuesAndInsights/ArticlesPublications/Documents/Observatoire-des-EPHAD-2012.pdf
 
+Les personnes âgées de 60 ans ou plus, représentent aujourd’hui plus de 14,5 millions de personnes, soit 23 % de
+la
+population totale. Selon les dernières projections de l’INSEE, elles seront plus de 17 millions en 2020 et 23 millions
+en 2050 (soit 29 % à 35 % de la population totale). La prise en charge des personnes âgées dépendantes est et sera
+au
+cœur des enjeux sociétaux des prochaines décennies.
+Dans un contexte économique contraint, les professionnels en charge de ce secteur doivent, aujourd’hui plus que
+jamais, conjuguer qualité de la prise en charge des résidents et efficience budgétaire.
+Le cabinet KPMG qui accompagne, depuis de nombreuses années, les acteurs de l’Economie Sociale et Solidaire
+(6 300 organismes clients) et notamment ceux œuvrant pour l’accompagnement social de la personne, mesure
+au
+quotidien l’importance des défis que le secteur doit relever.
+Afin de contribuer aux réflexions sur les évolutions et enjeux qui modifient la prise en charge des personnes
+dépendantes, les professionnels du réseau « Economie Sociale et Solidaire » de KPMG élaborent chaque année
+un observatoire des établissements d’hébergement pour personnes âgées dépendantes (EHPAD).
+L’objectif de l’observatoire EHPAD 2012 est de restituer et d’analyser les principaux ratios économiques et
+financiers caractéristiques de la gestion de ces structures : taux d’occupation, coût par résident, coût moyen
+du personnel par fonction, coût des locaux, coût de la restauration, etc.
+Cette étude est destinée aux gestionnaires d’établissements, aux autorités de tarification et à toute autre
+personne physique ou morale intéressée par la gestion des EHPAD.
+L’observatoire EHPAD 2012 a été conçu à partir de données portant sur l’exercice 2010, auprès de
+169 établissements* publics et Privés Non Lucratifs (PNL). Les EHPAD PNL regroupent les formes
+juridiques d’organismes gestionnaires suivantes : associations, fondations, mutuelles et congrégation
+
+résultats
+---------
+- panel: 20% public et 80% PNL
+- capacité médiane 68(41-353) et 69(15-400)
+- capacité moyenne: 96 et 76
+- Le niveau moyen de dépendance des résidents d’un EHPAD est
+traditionnellement mesuré par la notion de Gir Moyen Pondéré (GMP).
+Plus le GMP est élevé, plus les résidents sont dépendants.
+La moyenne des GMP des établissements de l’échantillon se situe à 620
+3 classes moins de 600, de 600 à 700, plus de 700
+- Le niveau de dépendance des résidents en EHPAD PNL du panel a augmenté
+de 2008 à 2010, la médiane passant de 607 à 623.
+En 2010, les EHPAD publics de l’échantillon ont un niveau de dépendance
+affiché supérieur à celui des EHPAD PNL, avec une médiane de 667 contre
+623 pour les EHPAD PNL.
+- Taux d’occupation 97 %  
+Modalités de calcul : Nombre de journées hébergement facturées/ Nombre de journées théoriques
+Les taux d’occupation varient peu d’un établissement à un autre.
+
+- Taux de présence des résidents 98 %
+:
+Modalités de calcul : Nombre de journées dépendance /
+Nombre de journées hébergement (réalisées)
+```{r}
+0.97*0.98
+```
+
+L’ absentéisme des résidents est globalement très faible, il varie à la marge
+en fonction du niveau de GMP de la structure
