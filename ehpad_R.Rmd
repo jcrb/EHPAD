@@ -19,7 +19,7 @@ d<-read.table(f,header=TRUE,sep=";",as.is=TRUE)
 
 save(d,file="ehpad_alsace.rda")
 ```{r}
-
+source("../fct.R")
 load("data/ehpad_alsace.Rda")
 names(d)
 ```
@@ -67,6 +67,8 @@ summary(sct)
 epad<-cbind(epad,sct)
 hist(sct,xlab="Capacité totale",main="Capacité des Ehpad en Alsace",ylab="Nombre d'établissements",sub="(Données du répertoire FINESS au 1/08/2013)",col="lavender")
 legend(200,100,legend="capacité moyenne: 73",bty="n",cex=1)
+copyright(an ="2013",side=4,line=-1,cex=0.8)
+
 print("EHPAD ayant plus de 150 places d'hébergement")
 epad[epad$sct > 140,c(1,2,4,18)]
 ```
@@ -102,7 +104,7 @@ cap.max | 200 | 350
 mediane | 64 | 70    
 moyenne | 73 | 78  
 
-Etablissements ayant 150 places ou plus: 
+11 Etablissements ayant 150 places ou plus: 
 
    |  FINESS           |            Raison.sociale  |   Libelle.routage | Places
 ------|----------------|-----------------|--------------|----------
@@ -207,3 +209,8 @@ Nombre de journées hébergement (réalisées)
 
 L’ absentéisme des résidents est globalement très faible, il varie à la marge
 en fonction du niveau de GMP de la structure
+
+Cnétique de l'évènement:
+- lente ou rapide
+- isolée ou de masse
+- durée brève ou longue (conditionne le retour)
